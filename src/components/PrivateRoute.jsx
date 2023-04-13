@@ -7,7 +7,7 @@ export default function PrivateRoute({ children }){
     const { user } = useContext(UserContext);
     if(!user){
         alert("You are not signed in. Redirecting to sign-in page!");
-        return <Navigate to="/sign-in" />
+        return <Navigate to="/sign-in/customers" />
     }
     return children;
 }
