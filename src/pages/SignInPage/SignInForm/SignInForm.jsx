@@ -50,7 +50,7 @@ export default function SignInForm() {
         />
       </Text>
       <Text>
-        <label htmlFor="">Senha</label>
+        <label htmlFor="">Password</label>
         <input
           type="password"
           value={signInData.password}
@@ -63,7 +63,7 @@ export default function SignInForm() {
         type="submit"
         disabled={disabled}
       >
-        ENTRAR
+        Sign in
       </Button>
     </SignInFormContainer>
   );
@@ -74,35 +74,40 @@ const SignInFormContainer = styled.form`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
-  height: 300px;
+  width: 100%;
   background-color: #ffffff;
-  border: 2px solid black;
-  border-radius: 50px;
+  border: 3px solid #686868;
+  * {
+    font-size: 24px;
+  }
+  box-shadow: 7px 5px 139px -29px rgba(0,0,0,0.75) inset;
 `;
 
 const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: aliceblue;
   color: black;
-  width: 400px;
-  height: 50px;
-  label,
-  input {
-    width: 100%;
-    border-radius: 5px;
+  width: 80%;
+  label {
+    margin-top: 40px;
   }
-  
   input {
-    border: 1px solid black;
+    border-radius: 0px;
+    border: 1px solid #808080;
+    padding: 5px 10px;
+    margin-top: 5px;
   }
 `;
 
 const Button = styled.button`
-  background-color:  #32b632;
-  width: 400px;
-  height: 30px;
-  border-radius: 10px;
+  background-color:  #5726b3;
+  &:hover {
+    background-color:  #421786;
+  }
+  color: #eeeeee;
+  width: 80%;
+  height: 40px;
+  margin: 40px 0px;
+  border: 0px;
 `;
