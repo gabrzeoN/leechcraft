@@ -10,6 +10,7 @@ export default function HomePage() {
       <Links>
         <Link to={"/sign-in/customers"} >Login como cliente</Link>
         <Link to={"/sign-up/customers"} >Me cadastrar como cliente</Link>
+        <div></div>
         <Link to={"/sign-in/professionals"} >Login como profissional</Link>
         <Link to={"/sign-up/professionals"} >Me cadastrar como profissional</Link>
       </Links>
@@ -31,4 +32,11 @@ const SignInPageContainer = styled.main`
 const Links = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: aliceblue;
+  width: 100%;
+  div {
+    width: 100%;
+    height: 3px;
+    background-color: aliceblue;
+  }
 `;

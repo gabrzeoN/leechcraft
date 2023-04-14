@@ -1,11 +1,15 @@
 import { useState, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import KeyIcon from '@mui/icons-material/Key';
+
 import { UserContext } from "../../../contexts/UserContext.jsx";
 import * as authApi from "../../../services/auth.js";
+import Alert from "../../../components/Feedbacks/Alert.jsx";
 
 export default function SignInForm() {
   const [disabled, setDisabled] = useState(false);
+  const [ alert, setAlert ] = useState({message:'', isOpen:true, kind:'', update: 0}); // error warning success info
   const [signInData, setSignInData] = useState({
     email: "",
     password: ""
@@ -27,12 +31,10 @@ export default function SignInForm() {
       }
       localStorage.setItem("teleconsultas_user", JSON.stringify(promise.data));
       setUser(promise.data);
-      console.log(promise.data);
       navigate("/");
       setDisabled(false);
     } catch (error) {
-      alert(error.response.data);
-      console.log(error.response.data);
+      setAlert({message: error.response.data, isOpen:true, kind:'error', update: alert.update + 1});
       setDisabled(false);
     }
   }
@@ -54,6 +56,7 @@ export default function SignInForm() {
         <input
           type="password"
           value={signInData.password}
+          icon={<KeyIcon color='primary'/>}
           onChange={(e) => setSignInData({ ...signInData, password: e.target.value })}
           disabled={disabled}
           required
@@ -65,6 +68,7 @@ export default function SignInForm() {
       >
         Sign in
       </Button>
+      <Alert alert={alert} />
     </SignInFormContainer>
   );
 }
@@ -109,5 +113,6 @@ const Button = styled.button`
   width: 80%;
   height: 40px;
   margin: 40px 0px;
-  border: 0px;
+  border-top: 2px solid #421786;
+  border-bottom: 2px solid #421786;
 `;

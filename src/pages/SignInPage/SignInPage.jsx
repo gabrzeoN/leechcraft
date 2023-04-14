@@ -4,18 +4,17 @@ import SignInForm from "./SignInForm/SignInForm";
 import BackgroudPhoto from "../../assets/images/image-01.jpg";
 
 export default function SignInPage() {
-
   return (
     <SignInPageContainer>
       <MainContent backgroud={BackgroudPhoto}>
         <h1>Meet me here</h1>
       </MainContent>
-
       <FormContent>
         <SignInForm />
         <Links>
           <Link to={"/sign-in/customers"} >Login as client</Link>
           <Link to={"/sign-up/customers"} >Sign up as client</Link>
+          <div></div>
           <Link to={"/sign-in/professionals"} >Login as professional</Link>
           <Link to={"/sign-up/professionals"} >Sign up professional</Link>
         </Links>
@@ -39,7 +38,6 @@ const MainContent = styled.div`
   display: flex;
   opacity: 0.95;
   justify-content: center;
-
   h1 {
     margin-top: 10.625rem;
     font-size: 80px;
@@ -67,12 +65,20 @@ const Links = styled.div`
   flex-direction: column;
   font-size: 30px;
   align-items: center;
+  /* width: 100%; */
   a, a:visited{
     text-decoration: none;
     color: #bebebe;
     :hover {
       color: #ffffff;
     }
-    margin-top: 14px;
+    margin: 7px 0px;
+  }
+  div {
+    width: 100%;
+    height: 3px;
+    /* background-color: aliceblue; */
+    margin: 28px 0px;
+    border: 2px dashed #bebebe;
   }
 `;
