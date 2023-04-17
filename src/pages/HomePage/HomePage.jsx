@@ -6,47 +6,55 @@ import HistoryIcon from '@mui/icons-material/History';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import EventIcon from '@mui/icons-material/Event';
 
+import Header from "../../components/Header";
+
 export default function HomePage() {
 
   return (
     <HomePageContainer>
-      <header>
-        {/* Logo */}
-        {/* <div>Go back Home</div> */}
-        {/* Logout */}
-        {/* Profile pic */}
-      </header>
+      <Header />
       <main>
         <section className="panel">
-          <div className="screen">
-            <h1>My schedule</h1>
-            {/* <p>Set the time you are available for meeting</p> */}
-            <CalendarMonthIcon />
-          </div>
+          <Link to={"/private-room"}>
+            <div className="screen">
+              <h1>My schedule</h1>
+              {/* <p>Set the time you are available for meeting</p> */}
+              <CalendarMonthIcon />
+            </div>
+          </Link>
 
-          <div className="screen">
-            <h1>Set a meeting</h1>
-            {/* <p>Set a meeting according to someone else's schdule</p> */}
-            <EventIcon />
-          </div>
+          <Link to={"/private-room"}>
+            <div className="screen">
+              <h1>Set a meeting</h1>
+              {/* <p>Set a meeting according to someone else's schdule</p> */}
+              <EventIcon />
+            </div>
+          </Link>
 
-          <div className="screen">
-            <h1>Meeting history</h1>
-            {/* <p>List of all of your contacts</p> */}
-            <HistoryIcon />
-          </div>
+          <Link to={"/private-room"}>
+            <div className="screen">
+              <h1>Meeting history</h1>
+              {/* <p>List of all of your contacts</p> */}
+              <HistoryIcon />
+            </div>
+          </Link>
 
-          <div className="screen">
-            <h1>My Contacts</h1>
-            {/* <p>List of all of your contacts</p> */}
-            <AccountCircleIcon />
-          </div>
+          <Link to={"/private-room"}>
+            <div className="screen">
+              <h1>My Contacts</h1>
+              {/* <p>List of all of your contacts</p> */}
+              <AccountCircleIcon />
+            </div>
+          </Link>
 
-          <div className="screen">
-            <h1>My private room</h1>
-            {/* <p>Test your microfone and webcan before you enter a meeting</p> */}
-            <MeetingRoomIcon />
-          </div>
+          <Link to={"/private-room"}>
+            <div className="screen">
+              <h1>My private room</h1>
+              {/* <p>Test your microfone and webcan before you enter a meeting</p> */}
+              <MeetingRoomIcon />
+            </div>
+          </Link>
+
         </section>
       </main>
     </HomePageContainer>
@@ -61,18 +69,9 @@ const HomePageContainer = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
-  header {
-    background-color: #48507e;
-    border: 1px solid black;
-    height: 80px;
-    width: 95%;
-    margin-top: 30px;
-    position: fixed;
-    z-index: 1;
-  }
   main{
     width: 95%;
-    /* background-color: #487e58; // TODO: erase */
+    border: 3px dashed #487e58; // TODO: erase
     margin-top: 170px;
     .panel {
       display: flex;

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import SignInPage from "../pages/SignInPage/SignInPage";
 import HomePage from "../pages/HomePage/HomePage";
+import RoomPage from "../pages/RoomPage/RoomPage";
 import PrivateRoute from "./PrivateRoute";
 import { UserProvider } from "../contexts/UserContext";
 import { PageNavigationProvider } from "../contexts/PageNavigationContext";
@@ -21,6 +22,7 @@ export default function App() {
 						<Route path="/sign-in/customers" element={<SignInPage user={"customers"} />} />
 						<Route path="/sign-in/professionals" element={<SignInPage user={"professionals"}/>} />
 						<Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+						<Route path="/private-room" element={<PrivateRoute><RoomPage /></PrivateRoute>} />
 					</Routes>
 				</BrowserRouter>
 			</PageNavigationProvider>
